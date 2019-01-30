@@ -1,28 +1,57 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import { connect } from 'react-redux';
+
+import 'typeface-roboto';
+
+//Own componentes
+import Wrapper from './components/Wrapper';
+import * as populationService from './services/PopulationService';
+
+const styles = theme => ({
+  root: {
+    textAlign: 'center'
+  },
+});
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+  
+
+  componentWillMount(){
+    this.props.getInhabitants();
+    /*this.populationService.getPopulation
+    .then(function (population) {
+        self.setState({population});
+    })
+    .catch(function (error) {
+        console.log(error.message);
+    });*/
+  }  
+
+  render(){
+      //const population=this.state.population;
+      return(
+        <div>
+          Hola
+          {this.props.population}          
+          chau
+          <Wrapper></Wrapper>
+        </div>
+      );
   }
 }
 
-export default App;
+// State to props
+const mapStateToProps = state => {
+  return {
+    population: state.population
+  }
+};
+
+// Dispatch to Props
+/*const mapDispatchToProps = dispatch =>({
+  populationService
+});*/
+
+// Connect everything
+export default connect(mapStateToProps, populationService)(withStyles(styles)(App));

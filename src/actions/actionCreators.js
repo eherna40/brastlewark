@@ -50,6 +50,10 @@ export const createFilters = (items) => {
         filter.professions.options.push(element.professions[x]);
       }
     } 
+
+    if(filter.qualifications.maxNumberOfFriends< element.friends.length){ filter.qualifications.maxNumberOfFriends = element.friends.length }
+    if(filter.qualifications.maxNumberOfProfessions< element.professions.length){ filter.qualifications.maxNumberOfProfessions = element.professions.length }
+    
   });
  
  /* for (var i in items) {

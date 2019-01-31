@@ -15,29 +15,12 @@ const styles = theme => ({
 });
 
 class App extends Component {
-  
-
   componentWillMount(){
     this.props.getInhabitants();
-    /*this.populationService.getPopulation
-    .then(function (population) {
-        self.setState({population});
-    })
-    .catch(function (error) {
-        console.log(error.message);
-    });*/
-  }  
-
+  } 
+  
   render(){
-      //const population=this.state.population;
-      return(
-        <div>
-          Hola
-          {this.props.population}          
-          chau
-          <Wrapper></Wrapper>
-        </div>
-      );
+      return <Wrapper/>
   }
 }
 
@@ -48,10 +31,11 @@ const mapStateToProps = state => {
   }
 };
 
-// Dispatch to Props
-/*const mapDispatchToProps = dispatch =>({
-  populationService
-});*/
+const mapDispatchToProps = dispatch =>({
+  getInhabitants: () =>{
+    return dispatch(populationService.getInhabitants());
+  }
+});
 
 // Connect everything
-export default connect(mapStateToProps, populationService)(withStyles(styles)(App));
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(App));

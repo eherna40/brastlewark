@@ -1,7 +1,31 @@
 const initialState = {
     population: [],
-    gnomeSelected: {},
-    professionSelected: {}
+    filters:{
+        age:{
+            min: null,
+            max: null,
+        },
+        weight:{
+            max: null,
+            min: null
+        }, 
+        height: {
+            max: null,
+            min: null
+        },
+        hair: {
+            options: []
+        },
+        professions:{
+            options: []
+        },
+        gnomeSelected: {},
+        professionSelected: {},
+        qualifications:{
+            maxNumberOfFriends: null,
+            maxNumberOfProfessions: null
+        },
+    }       
 }
 
 export default initialState;

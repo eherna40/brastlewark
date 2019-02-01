@@ -21,10 +21,12 @@
   direction: ltr;
 }
 .noUi-base {
-  width: 100%;
+  width: 90%;
   height: 100%;
   position: relative;
   z-index: 1;
+  padding: 4px;
+  margin: 10px;
   /* Fix 401 */
 }
 .noUi-connect {
@@ -85,10 +87,10 @@
 .noUi-target {
   border-radius: 2px;
   height: 4px;
-  background-color: rgba(0,185,230,0.23);
+  background-color: white;
 }
 .noUi-connect {
-  background: #00b9e6;
+  background: darkorange;
   -webkit-transition: background 450ms;
   transition: background 450ms;
 }
@@ -105,11 +107,11 @@
   height: 14px;
   border-radius: 50%;
   transition: box-shadow 0.2s ease;
-  background-color: #00b9e6;
+  background-color: darkorange;
   cursor: default;
 }
 .noUi-active {
-  border-color: #00b9e6;
+  border-color: #ffffff;
   box-shadow: 0 0 0 15px rgba(0,185,230,0.30);
   outline: none;
 }

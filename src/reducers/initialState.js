@@ -4,6 +4,8 @@ const initialState = {
         age:{
             min: null,
             max: null,
+            from: null,
+            to: null
         },
         weight:{
             max: null,

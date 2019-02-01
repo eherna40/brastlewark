@@ -20,7 +20,7 @@ class App extends Component {
   } 
   
   render(){
-      return <Wrapper/>
+      return <Wrapper dispatch={this.props.dispatch}/>
   }
 }
 
@@ -34,7 +34,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch =>({
   getInhabitants: () =>{
     return dispatch(populationService.getInhabitants());
-  }
+  },
+  dispatch
 });
 
 // Connect everything

@@ -39,61 +39,26 @@ export const createFilters = (items) => {
     if(filter.height.min > element.height){ filter.height.min = element.height }
     if(filter.height.max < element.height){ filter.height.max = element.height }
 
+    // Create a collection of kind of hairs
     if(element.hair_color){
       if(filter.hair.options.indexOf(element.hair_color) === -1){
         filter.hair.options.push(element.hair_color);
       }
     }
-
+    
+    // Create a collection of kind of professions
     for (let x in element.professions){
       if(filter.professions.options.indexOf(element.professions[x]) === -1){
         filter.professions.options.push(element.professions[x]);
       }
     } 
 
+    // Ranking of best qualified (popularity and friendly)
     if(filter.qualifications.maxNumberOfFriends< element.friends.length){ filter.qualifications.maxNumberOfFriends = element.friends.length }
     if(filter.qualifications.maxNumberOfProfessions< element.professions.length){ filter.qualifications.maxNumberOfProfessions = element.professions.length }
     
   });
  
- /* for (var i in items) {
-    
-    // Initialize
-    if(i===0){
-        filter.age.min = items[i].age;
-        filter.age.max = items[i].age;
-        filter.weight.min = items[i].weight;
-        filter.weight.max = items[i].weight;
-        filter.height.min = items[i].height;
-        filter.height.max = items[i].height;
-        filter.qualifications.maxNumberOfFriends= items[i]
-        filter.qualifications.maxNumberOfProfessions        
-    }
-
-
-    // Get Max's and Min's
-    if(filter.age.min > items[i].age){ filter.age.min = items[i].age }
-    if(filter.age.max < items[i].age){ filter.age.max = items[i].age }
-
-    if(filter.weight.min > items[i].weight){ filter.weight.min = items[i].weight }
-    if(filter.weight.max < items[i].weight){ filter.weight.max = items[i].weight }
-
-    if(filter.height.min > items[i].height){ filter.height.min = items[i].height }
-    if(filter.height.max < items[i].height){ filter.height.max = items[i].height }
-
-    if(items[i].hair_color){
-      if(filter.hair.options.indexOf(items[i].hair_color) === -1){
-        filter.hair.options.push(items[i].hair_color);
-      }
-    }
-
-    for (let x in items[i].professions){
-      if(filter.professions.options.indexOf(items[i].professions[x]) === -1){
-        filter.professions.options.push(items[i].professions[x]);
-      }
-    }
-  }*/
-
   filter.age.selectFrom = filter.age.min;
   filter.age.selectTo = filter.age.max;
   filter.weight.selectFrom = filter.weight.min;
@@ -109,3 +74,10 @@ export const createFilters = (items) => {
     type: types.INHABITANTS_LOAD_FILTERS, data: filter    
   }
 }
+
+
+export const setAgeSelected = (from, to) => {
+    return {
+        type: types.SET_AGE_SELECTED, from, to    
+    }
+};

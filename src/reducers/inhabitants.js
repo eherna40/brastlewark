@@ -12,28 +12,32 @@ export default function inhabitants_reducer(state = initialState, action = {}) {
         case types.INHABITANTS_LOAD_FILTERS:
         return {
             ...state,
-            professions: {
-                ...state.professions,
-                options: action.data.professions
-            },
-            hair: {
-                ...state.hair,
-                options: action.data.hair
-            },
-            height: {
-                ...state.height,
-                min: action.data.heightMin,
-                max: action.data.heightMax
-            },
-            weight: {
-                ...state.weight,
-                min: action.data.weightMin,
-                max: action.data.weightMax
-            },
-            age: {
-                ...state.age,
-                min: action.data.ageMin,
-                max: action.data.ageMax
+            filters:{
+                professions: {
+                    ...state.filters.professions,
+                    options: action.data.professions
+                },
+                hair: {
+                    ...state.filters.hair,
+                    options: action.data.hair
+                },
+                height: {
+                    ...state.filters.height,
+                    min: action.data.heightMin,
+                    max: action.data.heightMax,
+                    from: action.data.heightMin,
+                    to: action.data.heightMax
+                },
+                weight: {
+                    ...state.filters.weight,
+                    min: action.data.weightMin,
+                    max: action.data.weightMax
+                },
+                age: {
+                    ...state.filters.age,
+                    min: action.data.ageMin,
+                    max: action.data.ageMax
+                }
             }
         }
         default:

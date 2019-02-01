@@ -1,6 +1,6 @@
 export default (theme) => ({
   root: {
-    width: 200,
+    width: '80%',
     minWidth: 200,
     paddingRight: 10,
     flexDirection: 'column',
@@ -11,7 +11,7 @@ export default (theme) => ({
   },
 
   title: {
-    width: '100%',
+    width: '80%',
     color: 'rgba(0,0,0,0.75)',
     fontWeight: 300,
     margin: 15,
@@ -19,7 +19,7 @@ export default (theme) => ({
   },
 
   results: {
-    width: '100%',
+    width: '80%',
     color: 'rgba(0,0,0,0.7)',
     fontWeight: 400,
     fontSize: 11,

@@ -12,6 +12,17 @@ export default function filter_reducer(state = initialState, action = {}) {
             return {
                 ...state
             };
+        case types.SET_AGE_SELECTED:
+            return {
+                ...state,
+                filters:{
+                    age: {
+                        ...state.filters.age,
+                        from: action.from,
+                        to: action.to
+                    }
+                }
+            }
         default:
             return state
     }

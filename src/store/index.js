@@ -11,7 +11,7 @@ import reducers from '../reducers';
 // Create middleware
 let middlewares = applyMiddleware(thunkMiddleware, promiseMiddleware());
 
-// If in DEV mode
+//const componseEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 
 function configureStore(initialState = {}) {

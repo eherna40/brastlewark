@@ -11,8 +11,7 @@
   -ms-touch-action: none;
   touch-action: none;
   -ms-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+  -moz-user-select: none; 
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -261,6 +260,7 @@
 
 .noUi-horizontal .noUi-tooltip {
   -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
 }
 
 .noUi-active .noUi-tooltip {

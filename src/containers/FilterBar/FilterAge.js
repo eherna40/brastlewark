@@ -26,8 +26,8 @@ class FilterAge extends Component {
         let from = (!loading && age && age.from) || min;
         let to =   (!loading && age && age.to) || max;
         return(
-            <div>
-                Age:
+            <div className="FilterAge">
+                Age ({min} - {max}):
                 <Nouislider
                     range={{min: min, max: max}}
                     start={[from, to]}

@@ -29,10 +29,10 @@ class Wrapper extends Component {
   render() {
     return (
       <div style={{width:'100%', padding:'15px', margin:'10px'}}>
-        <div style={{width:'15%', background:'#ffffff', float:'left', padding:'10px'}}>
+        <div style={{width:'15%', background:'#ffffff', float:'left', padding:'10px', position:"fixed"}}>
           <FilterBar/>
         </div>
-        <div style={{width:'80%', background:'#ffffff', float:'left', padding:'10px'}}>
+        <div style={{width:'80%', background:'#ffffff', float:'right', padding:'10px', }}>
           <GnomeList/>        
         </div>
       </div>

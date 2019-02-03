@@ -5,28 +5,28 @@ import wNumb from 'wnumb';
 
 import './../../static/nouislider.css';
 import * as at from '../../actions/actionCreators';
-import * as types from './../../actions/actionTypes';
+import * as types from '../../actions/actionTypes';
 
-class FilterWeight extends Component {
+class FilterHeight extends Component {
   
 
     onChange(value){
         let self=this;
-        this.props.setWeightSelected(value);
+        this.props.setHeightSelected(value);
         setTimeout(function(){
-            self.props.applyFilters(types.SET_WEIGHT_SELECTED);
+            self.props.applyFilters(types.SET_HEIGHT_SELECTED);
         }, 200);
     };
 
     render(){
-        const{weight, loading} = this.props;
-        let max =  (!loading && weight && weight.max) || 400;
-        let min =  (!loading && weight && weight.min) || 0;
-        let from = (!loading && weight && weight.from) || min;
-        let to =   (!loading && weight && weight.to) || max;
+        const{height, loading} = this.props;
+        let max =  (!loading && height && height.max) || 400;
+        let min =  (!loading && height && height.min) || 0;
+        let from = (!loading && height && height.from) || min;
+        let to =   (!loading && height && height.to) || max;
         return(
-            <div className="FilterWeight">
-                Weigth ({min.toFixed(2)} - {max.toFixed(2)}):
+            <div className="FilterHeight">
+                Heigth ({min.toFixed(2)} - {max.toFixed(2)}):
                 <Nouislider
                     range={{min: min, max: max}}
                     start={[from, to]}
@@ -41,15 +41,15 @@ class FilterWeight extends Component {
 
 const mapStateToProps = state => {
     return{
-        weight: state.filters.weight,
+        height: state.filters.height,
         loading: state.filters.loading
     };    
 };
 
 const mapDispatchToProps = dispatch => ({
-    setWeightSelected: (value) =>{
+    setHeightSelected: (value) =>{
        return dispatch(
-            at.setWeightSelected(parseInt(value[0]), parseInt(value[1]))
+            at.setHeightSelected(parseInt(value[0]), parseInt(value[1]))
         );
     },
     applyFilters: (type) => {
@@ -58,4 +58,4 @@ const mapDispatchToProps = dispatch => ({
     }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(FilterWeight);
+export default connect(mapStateToProps, mapDispatchToProps)(FilterHeight);

@@ -140,6 +140,8 @@ export const applyFilters = (filter) => (dispatch, getState) => {
 
 export const setAgeSelected = (from, to) => ({ type: types.SET_AGE_SELECTED, from, to});
 
+export const setHeightSelected = (from, to) => ({ type: types.SET_HEIGHT_SELECTED, from, to});
+
 export const setWeightSelected = (from, to) => ({ type: types.SET_WEIGHT_SELECTED, from, to});
 
 export const filterByProfession = () => ({type: types.FILTER_BY_PROFESSION});

@@ -5,7 +5,7 @@ import '../../static/styles.scss';
 
 class FiltersSelected extends Component {
     render() {
-        const { age, height, weight } = this.props;
+        const { age, height, weight, population, gnomeSelected, professionSelected } = this.props;
         
         const visibleAgeFilter          =   ((age.from && (parseFloat(age.min) !== parseFloat(age.from))) ||
                                              (age.to && (parseFloat(age.max) !== parseFloat(age.to))))?
@@ -15,16 +15,20 @@ class FiltersSelected extends Component {
                                              `Height from ${height.from.toFixed(2)} to ${height.to.toFixed(2)}`:'',           
               visibleWeightFilter       =   ((weight.from && (parseFloat(weight.min) !== parseFloat(weight.from))) ||
                                              (weight.to && (parseFloat(weight.max) !== parseFloat(weight.to))))?
-                                             `Weight from ${weight.from.toFixed(2)} to ${weight.to.toFixed(2)}`:'';
-              /*visibleGnomeSelected      =   (gnomeSelected)?
-                                            `Gnome: ${gnomeSelected}`:'',
+                                             `Weight from ${weight.from.toFixed(2)} to ${weight.to.toFixed(2)}`:'',
+              visibleGnomeSelected      =   (gnomeSelected)?
+                                            `Gnome: like ${gnomeSelected}`:'',
               visibleProfessionSelected =   (professionSelected)?
-                                            `Profession ${professionSelected}`:'';*/
+                                            `Profession ${professionSelected}`:'';
+                                        
         return(
             <div className="FiltersSelected">
+                <div className="FilterMatch">{population.length} match</div>
                 <div className="FilterItem">{visibleAgeFilter}</div>
                 <div className="FilterItem">{visibleHeightFilter}</div>
                 <div className="FilterItem">{visibleWeightFilter}</div>
+                <div className="FilterItem">{visibleGnomeSelected}</div>
+                <div className="FilterItem">{visibleProfessionSelected}</div>
             </div>
         );
     };
@@ -36,12 +40,11 @@ const mapStateToProps = state => {
         height: state.filters.height,
         weight: state.filters.weight,
         gnomeSelected: state.filters.gnomeSelected,
-        professionSelected: state.filters.professionSelected
+        professionSelected: state.filters.professionSelected,
+        population: state.inhabitants.population.filter(item => item.display)
     };
 }
 
-const mapDispatchToProps = dispatch => ({
-    
-});
 
-export default connect(mapStateToProps, mapDispatchToProps)(FiltersSelected);
+
+export default connect(mapStateToProps, null)(FiltersSelected);

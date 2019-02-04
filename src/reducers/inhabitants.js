@@ -36,7 +36,8 @@ export default function inhabitants(state = initialState, action = {}) {
                 max: action.data.ageMax,
                 from: action.data.ageMin,
                 to: action.data.ageMax
-            }
+            },
+            showDetail: false
         }
         default:
             return state

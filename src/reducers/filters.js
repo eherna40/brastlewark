@@ -6,11 +6,13 @@ export default function filter(state = initialState, action = {}) {
     switch (action.type) {
         case types.FILTER_BY_PROFESSION:
             return {
-                ...state
+                ...state,
+                professionSelected: action.professionSelected
             };
         case types.FILTER_BY_NAME:
             return {
-                ...state
+                ...state,
+                gnomeSelected: action.gnomeSelected
             };
         case types.SET_AGE_SELECTED:
             return {
@@ -53,7 +55,7 @@ export default function filter(state = initialState, action = {}) {
             return {
                 ...state,
                 loading: false
-        }
+        }        
         default:
             return state
     }

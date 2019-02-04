@@ -53,7 +53,6 @@ const mapDispatchToProps = dispatch => ({
         );
     },
     applyFilters: (type) => {
-        console.log(type);
         return dispatch(at.applyFilters(type));
     }
 });

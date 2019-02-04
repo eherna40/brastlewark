@@ -36,7 +36,7 @@ export const inhabitantsLoadData=(data)=>( { type: types.INHABITANTS_LOAD_DATA, 
 export const inhabitantsLoadError=()=> ({ type: types.INHABITANTS_LOAD_ERROR, data:{}});
 
 export const createFilters = (items) => {
-  let {age, weight, height, qualifications, hair, professions, gnomeSelected} = initialState;
+  let {age, weight, height, qualifications, hair, professions, gnomeSelected, showDetail}  = initialState;
   
   items.forEach(element => {
     if(element.id===0){
@@ -89,14 +89,14 @@ export const createFilters = (items) => {
   professions.selected = '';
   hair.selected = '';
   gnomeSelected = '';
+  showDetail = false;
     
   return {
-    type: types.INHABITANTS_LOAD_FILTERS, data: {age, weight, height, qualifications, hair, professions, gnomeSelected}    
+    type: types.INHABITANTS_LOAD_FILTERS, data: {age, weight, height, qualifications, hair, professions, gnomeSelected, showDetail}    
   }
 }
 
 export const applyFilters = (filter) => (dispatch, getState) => {
-  console.log('en applyFilters. Filter:' + filter);
   const state = getState();
   let items = state.inhabitants.population;
   let showItem=false;
@@ -108,30 +108,23 @@ export const applyFilters = (filter) => (dispatch, getState) => {
   if(!f.weight.to){   f.weight.to = parseFloat(f.weight.max); }
   if(!f.height.from){ f.height.from = parseFloat(f.height.min); }
   if(!f.height.to){   f.height.to = parseFloat(f.height.max); }
-
+  if(!f.gnomeSelected || f.gnomeSelected===null) { f.gnomeSelected=''; }
+  if(!f.professionSelected || f.professionSelected===null) { f.professionSelected=''; }
+  
   items.forEach(item=>{
-    switch (filter){
-      case types.SET_AGE_SELECTED:
-        showItem = ((f.age.from <= parseFloat(item.age)) && (f.age.to >= parseFloat(item.age)));
-        break;
-      case types.SET_HEIGHT_SELECTED:
-        showItem =  ((f.height.from <= parseFloat(item.height)) && (f.height.to >= parseFloat(item.height)));
-        break;
-      case types.SET_WEIGHT_SELECTED:
-        showItem =  ((f.weight.from <= parseFloat(item.weight)) && (f.weight.to >= parseFloat(item.weight)));
-        break;
-      case types.FILTER_BY_NAME:
-        showItem =  (f.name.toUpperCase().indexOf(item.name.toUpperCase())>=0);
-        break;
-      case types.FILTER_BY_PROFESSION:
-        showItem =  (f.profession.toUpperCase().indexOf(item.professions.toUpperCase())>=0);
-        break;
-      default:
-        showItem = false;
-        break;
-    }
+        showItem = (((f.age.from <= parseFloat(item.age)) && (f.age.to >= parseFloat(item.age))) &&  
+                   ((f.height.from <= parseFloat(item.height)) && (f.height.to >= parseFloat(item.height))) && 
+                   ((f.weight.from <= parseFloat(item.weight)) && (f.weight.to >= parseFloat(item.weight))));
+        if(f.gnomeSelected!==''){
+          showItem= showItem &&
+            (item.name.toUpperCase().indexOf(f.gnomeSelected.toUpperCase())>=0);
+        } 
+        if(f.professionSelected!==''){
+          showItem= showItem &&
+          (item.professions.includes(f.professionSelected));
+        }          
+    //}
     item.display=showItem; //to show or not depending of the coincidence with the filters
-    
   });
 
   dispatch({type: types.APPLY_FILTERS, data: items});
@@ -144,8 +137,26 @@ export const setHeightSelected = (from, to) => ({ type: types.SET_HEIGHT_SELECTE
 
 export const setWeightSelected = (from, to) => ({ type: types.SET_WEIGHT_SELECTED, from, to});
 
-export const filterByProfession = () => ({type: types.FILTER_BY_PROFESSION});
+export const filterByProfession = (professionSelected) => ({type: types.FILTER_BY_PROFESSION, professionSelected});
 
-export const filterByName = () => ({ type: types.FILTER_BY_NAME });
+export const filterByName = (gnomeSelected) => ({ type: types.FILTER_BY_NAME, gnomeSelected });
+
+export const showHideDetail = (id, show) => (dispatch, getState) => {
+  const state = getState();
+  let items = state.inhabitants.population;
+  if(show){
+    items.forEach(item=>{
+      item.showDetail=false;  
+      if(item.id===id){
+        item.showDetail=true;  
+      }      
+    });
+  } else{
+    items.forEach(item=>{
+      item.showDetail=false;
+    });
+  }
+  dispatch({type: types.APPLY_FILTERS, data: items});
+};
 
 const setSetFetchingState = (payload) => ({type: payload});

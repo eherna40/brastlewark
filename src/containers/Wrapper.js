@@ -9,7 +9,11 @@ import GnomeList from './GnomeList';
 import FilterBar from '../components/FilterBar';
 import initialState from '../reducers/initialState';
 
+
 class Wrapper extends Component {
+  status={
+    loading:true
+  }
   componentDidMount(){
     this.props.getInhabitants();
   }
@@ -21,21 +25,27 @@ class Wrapper extends Component {
       this.setState({
         loading: store.getState().filters.loading,
         age: store.getState().inhabitants.age,
-        population: store.getState().inhabitants.population}); 
-         
+        population: store.getState().inhabitants.population});          
     });
   }
  
   render() {
+    const {loading}=this.props;
     return (
-      <div style={{width:'100%', padding:'15px', margin:'10px'}}>
-        <div style={{width:'15%', background:'#ffffff', float:'left', padding:'10px', position:"fixed"}}>
-          <FilterBar/>
-        </div>
-        <div style={{width:'80%', background:'#ffffff', float:'right', padding:'10px', }}>
-          <GnomeList/>        
-        </div>
+      <div>
+        {loading && (
+          <img src='assets/layout/images/loading.gif' alt="Progess....wait a minute" height="100" width="100"/>
+        )}
+        <div id="MainWrapperPopulation">
+          <div className="FilterBar">
+            <FilterBar/>
+          </div>
+          <div className="GnomeList">
+            <GnomeList/>        
+          </div>
+        </div>  
       </div>
+      
     );
   }
 }

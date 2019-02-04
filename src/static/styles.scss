@@ -1,6 +1,59 @@
 $p_radio_imagen:60px;
 $p_font_family: "Roboto","Helvetica","Arial",sans-serif;
 
+body{
+    background: url('./background-image.jpg') fixed no-repeat 0 0;
+    background-size: 100%
+}
+
+input {
+    border-radius: 4;
+    position: relative;
+    background-color: white;
+    border: '1px solid #ced4da';
+    font-size: 16;
+    width: 'auto';
+    padding: '10px 26px 10px 12px';
+    transition:  'box-shadow';
+    font-family: $p_font_family;
+}
+
+.lockup {
+    text-shadow: 0 1px 8px rgba(0,0,0,0.55);
+ }
+  
+ .lockup--heading{
+   padding-top: 55px;
+   font-size: 6.5rem;
+   color: #fff;
+   display: block;
+   line-height: 1;
+ }
+
+ 
+ .lockup--sub-heading {
+   font-size: 2.5rem;
+   color: #fff;
+   display: block;
+   line-height: 1;
+ }
+  
+ .grid-unit {
+   display: inline-block;
+   margin: 3%;
+   vertical-align: top;
+   width: 90%;
+ }
+
+.main-card {
+   width: 30%;
+   height: 162px;  
+   margin: 5px;
+   margin-right: 25px;
+   position: relative;
+   float: right;
+}
+
 .GnomeDetail{
     z-index: 99;
     img{
@@ -14,9 +67,9 @@ $p_font_family: "Roboto","Helvetica","Arial",sans-serif;
     };
     .GnomeName{
         font-family: $p_font_family;
-        font-size: 18px;
+        font-size: 20px;
         font-stretch: condensed; 
-        color: coral;
+        color: brown;
     };
     .GnomeExtraInfo{
         font-family: $p_font_family;
@@ -31,41 +84,187 @@ $p_font_family: "Roboto","Helvetica","Arial",sans-serif;
 
 .CardGnome{
     flex-grow: 0;
-    max-width: 23%;
-    flex-basis: 23%;
+    max-width: 24%;
+    flex-basis: 24%;
+    background: #ffffff;
     box-sizing: border-box;
     *, ::before, ::after {
         box-sizing: inherit;
     }
-    box-shadow: 0px 1px 5px 0px burlywood,0px 2px 2px 0px burlywood,0px 3px 1px -2px burlywood; 
-    border-radius: 4px;
-    background-color: #fff;
+    box-shadow: 0px 1px 5px 0px grey,0px 2px 2px 0px grey,0px 3px 1px -2px grey ; 
+    border-radius: 5px;
     margin: 3px;
 }
 
-.FilterItem{
-    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12); 
-    border-radius: 5px;
-    font-family: $p_font_family;
-    color: black;
-    background-color: burlywood;
-    font-size: 12px;
-    margin-left: 2px;
-    margin-bottom: 2px;
-    margin-top: 10px;    
+.MoreDetailsButton{
+    float: right;
+    width: 27px;
+    border-bottom-right-radius: 6px;
+    margin: 1px;
+    color: orange;
+    background: green;
 }
 
-.FilterAge, .FilterHeight, .FilterWeight{
-    background-color:wheat;
+.MainWrapperPopulation{
+    width:100%; 
+    padding:15px;
+    margin:10px;
+    display: none;
+}
+
+.FilterBar{
+    width: 230px;
+    float: left;
+    padding:0px;
+}
+
+.GnomeList{
+    width:80%;
+    float: right;
+    padding:10px;
+}
+
+.FilterItem, .FilterMatch{
+    //box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12); 
+    border-radius: 0px;
+    font-family: $p_font_family;
+    color: darkslategrey;
+    font-weight: bold;
+    font-size: 12px;
+    background: darkkhaki;
+    margin-left: 2px;
+    margin-bottom: 2px;
+    margin-top: 10px;
+    padding-left: 5px;     
+}
+
+.FilterAge, .FilterHeight, .FilterWeight, .FilterProfession, .FilterName{
+    background-color:white;
     height: 45px;
-    border-radius: 5px;
+    border-radius: 1px;
     font-family: $p_font_family;
     font-size: 12px;
-    box-shadow: 0px 1px 5px 0px burlywood,0px 2px 2px 0px burlywood,0px 3px 1px -2px burlywood; 
-    color: darkslategray;
+    box-shadow: 0px 1px 5px 0px grey,0px 2px 2px 0px grey,0px 3px 1px -2px grey; 
+    color: black;
     font-weight: bold;
         .noUi-target {
             margin: 10px;
         }
 }
+
+.FilterMatch{
+    font-size: 15px;
+    vertical-align: middle;
+    position: relative;
+    text-align: center;
+    color:  white;
+    background-color: darkkhaki
+}
+
+.FilterProfession {
+    select{
+            margin-left: 6px;
+            border-radius: 3px;
+            font-family: $p_font_family;
+            color: brown;
+            border: none;
+            width: 94%;
+    }
+}
+
+.FilterNameText {
+    margin-left: 6px;
+    border-radius: 3px;
+    font-family: $p_font_family;
+    color: brown;
+    border: none;
+    width: 94%;
+}
+
+.ImageLogoMini{
+    height: 70px;
+    position:absolute;
+    top: -50px;
+}
+
+
+#popup {
+    visibility: hidden;
+    opacity: 0;
+    margin-top: -300px;
+}
+
+#popup:target {
+    visibility:visible;
+    opacity: 1;
+    background-color: rgba(0,0,0,0.8);
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:0;
+    z-index: 999;
+    transition:all 1s;
+ }
+
+ .popup-contenedor {
+    position: relative;
+    margin:7% auto;
+    padding:30px 50px;
+    background-color: #fafafa;
+    color:#333;
+    border-radius: 3px;
+    width:45%;
+        img{
+            width: 200px;
+            height: 250px;
+            border-radius: 10px;
+        }
+    height: 350px;
+ }
+ .popup-cerrar {
+    position: absolute;
+    top:3px;
+    right:3px;
+    background-color: darkkhaki;
+    cursor: pointer;
+    padding:7px 10px;
+    font-size: 10px;
+    border-radius: 15px;
+    text-decoration: none;
+    line-height: 1;
+    color:#fff;
+ }
+
+ .popup-link{
+     float:right;
+     background: darkkhaki;
+     color: white;
+     font-family: $p_font_family;
+     padding: 3px;
+     border-top-left-radius: 10px;
+     border-bottom-right-radius: 5px;
+ }
+
+ .Imagedetail{
+     position: absolute;
+     float: left;
+     width: 25%;
+ }
+ .Profile{
+    position: relative;
+    float: right;
+    width: 65%;
+    padding-left: 35px;
+    margin-top: -20px;
+}
+ .ProfessionList, .FriendList, .PersonalInformation{
+     position: relative;
+        label{
+            font-size: 16px;
+            font-weight: bold;
+            font-family: $p_font_family;
+        }
+ }
 

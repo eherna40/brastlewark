@@ -89,7 +89,7 @@
   background-color: white;
 }
 .noUi-connect {
-  background: darkorange;
+  background: grey;
   -webkit-transition: background 450ms;
   transition: background 450ms;
 }
@@ -106,7 +106,7 @@
   height: 14px;
   border-radius: 50%;
   transition: box-shadow 0.2s ease;
-  background-color: darkorange;
+  background-color: darkgreen;
   cursor: default;
 }
 .noUi-active {
@@ -114,19 +114,7 @@
   box-shadow: 0 0 0 15px rgba(0,185,230,0.30);
   outline: none;
 }
-/* Handle stripes;
- */
-/*.noUi-handle:before,
-.noUi-handle:after {
-  content: "";
-  display: block;
-  position: absolute;
-  height: 14px;
-  width: 1px;
-  background: #E8E7E6;
-  left: 14px;
-  top: 6px;
-}*/
+
 .noUi-handle:after {
   left: 17px;
 }

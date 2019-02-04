@@ -8,8 +8,6 @@ import * as at from '../../actions/actionCreators';
 import * as types from '../../actions/actionTypes';
 
 class FilterHeight extends Component {
-  
-
     onChange(value){
         let self=this;
         this.props.setHeightSelected(value);
@@ -31,7 +29,7 @@ class FilterHeight extends Component {
                     range={{min: min, max: max}}
                     start={[from, to]}
                     step={1} connect={true}
-                    format={wNumb({decimals: 0, thousand: '', suffix: ''})}
+                    format={wNumb({decimals: 2, thousand: '', suffix: ''})}
                     tooltips onChange={this.onChange.bind(this)}/>
            </div>
         );        

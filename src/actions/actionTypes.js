@@ -9,6 +9,7 @@ export const SET_AGE_SELECTED =         'SET_AGE_SELECTED';
 export const SET_WEIGHT_SELECTED =      'SET_WEIGHT_SELECTED';
 export const SET_HEIGHT_SELECTED =      'SET_HEIGHT_SELECTED';
 export const APPLY_FILTERS =            'APPLY_FILTERS';
+export const SHOW_HIDE_DETAILS =        'SHOW_HIDE_DETAILS';
 
 //INHABITANTS
 export const INHABITANTS_LOAD_DATA =    'INHABITANTS_LOAD_DATA';

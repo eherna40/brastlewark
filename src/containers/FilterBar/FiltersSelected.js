@@ -23,12 +23,12 @@ class FiltersSelected extends Component {
                                         
         return(
             <div className="FiltersSelected">
-                <div className="FilterMatch">{population.length} match</div>
-                <div className="FilterItem">{visibleAgeFilter}</div>
-                <div className="FilterItem">{visibleHeightFilter}</div>
-                <div className="FilterItem">{visibleWeightFilter}</div>
-                <div className="FilterItem">{visibleGnomeSelected}</div>
-                <div className="FilterItem">{visibleProfessionSelected}</div>
+                <div className="filter-match">{population.length} match</div>
+                <div className="filter-item">{visibleAgeFilter}</div>
+                <div className="filter-item">{visibleHeightFilter}</div>
+                <div className="filter-item">{visibleWeightFilter}</div>
+                <div className="filter-item">{visibleGnomeSelected}</div>
+                <div className="filter-item">{visibleProfessionSelected}</div>
             </div>
         );
     };

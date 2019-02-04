@@ -68,7 +68,7 @@ input {
    float: right;
 }
 
-.GnomeDetail{
+.gnome-detail{
     z-index: 99;
     img{
         margin-top: 5px;
@@ -79,13 +79,13 @@ input {
         vertical-align: middle;
         margin-right: 5px;
     };
-    .GnomeName{
+    .gnome-name{
         font-family: $p_font_family;
         font-size: 20px;
         font-stretch: condensed; 
         color: brown;
     };
-    .GnomeExtraInfo{
+    .gnome-extra-info{
         font-family: $p_font_family;
         font-size: 10px;
         color: brown;
@@ -96,7 +96,7 @@ input {
     }
 }
 
-.CardGnome{
+.card-gnome{
     flex-grow: 0;
     max-width: 24%;
     flex-basis: 24%;
@@ -110,35 +110,26 @@ input {
     margin: 3px;
 }
 
-.MoreDetailsButton{
-    float: right;
-    width: 27px;
-    border-bottom-right-radius: 6px;
-    margin: 1px;
-    color: orange;
-    background: green;
-}
-
-.MainWrapperPopulation{
+.main-wrapper-population{
     width:100%; 
     padding:15px;
     margin:10px;
     display: none;
 }
 
-.FilterBar{
+.filter-bar{
     width: 230px;
     float: left;
     padding:0px;
 }
 
-.GnomeList{
+.gnome-list{
     width:80%;
     float: right;
     padding:10px;
 }
 
-.FilterItem, .FilterMatch{
+.filter-item, .filter-match{
     //box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12); 
     border-radius: 0px;
     font-family: $p_font_family;
@@ -152,7 +143,7 @@ input {
     padding-left: 5px;     
 }
 
-.FilterAge, .FilterHeight, .FilterWeight, .FilterProfession, .FilterName{
+.filter-age, .filter-height, .filter-weight, .filter-profession, .filter-name{
     background-color:white;
     height: 45px;
     border-radius: 1px;
@@ -166,7 +157,7 @@ input {
         }
 }
 
-.FilterMatch{
+.filter-match{
     font-size: 16px;
     vertical-align: middle;
     position: relative;
@@ -175,7 +166,7 @@ input {
     background-color: darkslategray
 }
 
-.FilterProfession {
+.filter-profession {
     select{
             margin-left: 6px;
             border-radius: 3px;
@@ -186,7 +177,7 @@ input {
     }
 }
 
-.FilterNameText {
+.filter-name-text {
     margin-left: 6px;
     border-radius: 3px;
     font-family: $p_font_family;
@@ -194,13 +185,6 @@ input {
     border: none;
     width: 94%;
 }
-
-.ImageLogoMini{
-    height: 70px;
-    position:absolute;
-    top: -50px;
-}
-
 
 #popup {
     visibility: hidden;
@@ -235,7 +219,7 @@ input {
             height: 250px;
             border-radius: 10px;
         }
-    height: 350px;
+    height: 400px;
  }
  .popup-cerrar {
     position: absolute;
@@ -261,22 +245,23 @@ input {
      border-bottom-right-radius: 5px;
  }
 
- .Imagedetail{
+ .image-detail{
      position: absolute;
      float: left;
      width: 25%;
  }
- .Profile{
+ .profile{
     position: relative;
     float: right;
     width: 65%;
     padding-left: 35px;
     margin-top: -5px;
 }
- .ProfessionList, .FriendList, .PersonalInformation{
+ .profession-list, .friend-list, .personal-information{
      position: relative;
+     font-size: 13px;
         label{
-            font-size: 16px;
+            font-size: 14px;
             font-weight: bold;
             font-family: $p_font_family;
         }

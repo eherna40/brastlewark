@@ -23,7 +23,7 @@ class FilterHeight extends Component {
         let from = (!loading && height && height.from) || min;
         let to =   (!loading && height && height.to) || max;
         return(
-            <div className="FilterHeight">
+            <div className="filter-height">
                 Heigth ({min.toFixed(2)} - {max.toFixed(2)}):
                 <Nouislider
                     range={{min: min, max: max}}

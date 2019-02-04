@@ -12,7 +12,7 @@ class GnomeList extends Component {
             <div>
                 <Grid container spacing={24}>
                     {!this.props.loading && this.props.population.map(item => 
-                        <div className="CardGnome" key={item.id}>
+                        <div className="card-gnome" key={item.id}>
                             <GnomeDetail item={item}/>
                         </div>
                     )}                    

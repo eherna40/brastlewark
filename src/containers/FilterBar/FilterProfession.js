@@ -21,7 +21,7 @@ class FilterProfession extends Component {
         const{professions} = this.props;
         let flagFirts=true;
         return(
-            <div className="FilterProfession">
+            <div className="filter-profession">
                 Profession:<br/>
                 <select placeholder="Select a profession" onChange={this.onChange.bind(this)}>
                     {

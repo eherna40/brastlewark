@@ -36,7 +36,7 @@ export const inhabitantsLoadData=(data)=>( { type: types.INHABITANTS_LOAD_DATA, 
 export const inhabitantsLoadError=()=> ({ type: types.INHABITANTS_LOAD_ERROR, data:{}});
 
 export const createFilters = (items) => {
-  let {age, weight, height, qualifications, hair, professions, gnomeSelected, showDetail}  = initialState;
+  let {age, weight, height, qualifications, hair, professions, gnomeSelected, idShowDetail}  = initialState;
   
   items.forEach(element => {
     if(element.id===0){
@@ -89,10 +89,10 @@ export const createFilters = (items) => {
   professions.selected = '';
   hair.selected = '';
   gnomeSelected = '';
-  showDetail = false;
+  idShowDetail = '';
     
   return {
-    type: types.INHABITANTS_LOAD_FILTERS, data: {age, weight, height, qualifications, hair, professions, gnomeSelected, showDetail}    
+    type: types.INHABITANTS_LOAD_FILTERS, data: {age, weight, height, qualifications, hair, professions, gnomeSelected, idShowDetail}    
   }
 }
 
@@ -130,6 +130,18 @@ export const applyFilters = (filter) => (dispatch, getState) => {
   dispatch({type: types.APPLY_FILTERS, data: items});
 };
 
+export const showHideDetail = (id) => (dispatch, getState) => {
+  const state = getState();
+  let items = state.inhabitants.population;
+  let idShowDetail='';
+  const found = items.find(function(element) {
+    return (element.id===id);
+  });
+  if(found){
+    idShowDetail=found.id;
+  }
+  dispatch({type: types.SHOW_HIDE_DETAILS, idShowDetail});
+};
 
 export const setAgeSelected = (from, to) => ({ type: types.SET_AGE_SELECTED, from, to});
 
@@ -140,23 +152,5 @@ export const setWeightSelected = (from, to) => ({ type: types.SET_WEIGHT_SELECTE
 export const filterByProfession = (professionSelected) => ({type: types.FILTER_BY_PROFESSION, professionSelected});
 
 export const filterByName = (gnomeSelected) => ({ type: types.FILTER_BY_NAME, gnomeSelected });
-
-export const showHideDetail = (id, show) => (dispatch, getState) => {
-  const state = getState();
-  let items = state.inhabitants.population;
-  if(show){
-    items.forEach(item=>{
-      item.showDetail=false;  
-      if(item.id===id){
-        item.showDetail=true;  
-      }      
-    });
-  } else{
-    items.forEach(item=>{
-      item.showDetail=false;
-    });
-  }
-  dispatch({type: types.APPLY_FILTERS, data: items});
-};
 
 const setSetFetchingState = (payload) => ({type: payload});

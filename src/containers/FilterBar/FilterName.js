@@ -18,9 +18,9 @@ class FilterName extends Component {
 
     render(){
         return(
-            <div className="FilterName">
+            <div className="filter-name">
                 Name:<br/> 
-                <input className="FilterNameText" type="text" placeholder = "Type a search name" size='30' onKeyUp={this.onChange.bind(this)}/>
+                <input className="filter-name-text" type="text" placeholder = "Type a search name" size='30' onKeyUp={this.onChange.bind(this)}/>
             </div>
         );        
     };

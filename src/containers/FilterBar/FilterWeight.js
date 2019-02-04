@@ -25,7 +25,7 @@ class FilterWeight extends Component {
         let from = (!loading && weight && weight.from) || min;
         let to =   (!loading && weight && weight.to) || max;
         return(
-            <div className="FilterWeight">
+            <div className="filter-weight">
                 Weigth ({min.toFixed(2)} - {max.toFixed(2)}):
                 <Nouislider
                     range={{min: min, max: max}}

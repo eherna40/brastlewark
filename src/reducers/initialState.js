@@ -30,7 +30,8 @@ const initialState = {
         maxNumberOfFriends: null,
         maxNumberOfProfessions: null
     },
-    loading: false
+    loading: false,
+    idShowDetail:''
 }
 
 export default initialState;

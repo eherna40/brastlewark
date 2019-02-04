@@ -33,11 +33,11 @@ class Wrapper extends Component {
     const {loading}=this.props;
     return (
       <div>        
-        <div id="MainWrapperPopulation">
-          <div className="FilterBar">
+        <div id="main-wrapper-population">
+          <div className="filter-bar">
             <FilterBar/>
           </div>
-          <div className="GnomeList">
+          <div className="gnome-list">
             {loading && (<div className="progress-bar">Processing.... wait an instant</div>)} 
            <GnomeList/>        
           </div>

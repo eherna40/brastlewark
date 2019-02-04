@@ -22,7 +22,7 @@ class App extends Component {
     const { isOpened } = this.state;
     return (
       
-      <div className="grid-unit" back>
+      <div className="grid-unit">
             {isOpened && (
               <div style={{position:'absolute'}}>
                 <Wrapper/>

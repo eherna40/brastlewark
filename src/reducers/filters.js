@@ -55,7 +55,12 @@ export default function filter(state = initialState, action = {}) {
             return {
                 ...state,
                 loading: false
-        }        
+        }      
+        case types.SHOW_HIDE_DETAILS:
+            return {
+                ...state,
+                idShowDetail: action.idShowDetail        
+        }
         default:
             return state
     }

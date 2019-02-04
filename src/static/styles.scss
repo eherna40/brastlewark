@@ -18,6 +18,20 @@ input {
     font-family: $p_font_family;
 }
 
+.progress-bar{
+    color:darkgreen;
+    position: absolute;
+    width: 500px;
+    margin-left: 80%;
+    top: 40%;
+    background: lightgreen;
+    padding: 50px;
+    font-family: $p_font_family;
+    font-size: 25px;
+    border-radius: 15px;    
+}
+
+
 .lockup {
     text-shadow: 0 1px 8px rgba(0,0,0,0.55);
  }
@@ -130,7 +144,7 @@ input {
     font-family: $p_font_family;
     color: darkslategrey;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 13px;
     background: darkkhaki;
     margin-left: 2px;
     margin-bottom: 2px;
@@ -153,12 +167,12 @@ input {
 }
 
 .FilterMatch{
-    font-size: 15px;
+    font-size: 16px;
     vertical-align: middle;
     position: relative;
     text-align: center;
-    color:  white;
-    background-color: darkkhaki
+    color:  lightblue;
+    background-color: darkslategray
 }
 
 .FilterProfession {

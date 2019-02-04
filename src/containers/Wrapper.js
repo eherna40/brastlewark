@@ -5,10 +5,10 @@ import { connect }  from 'react-redux';
 import { getInhabitants }  from './../actions/actionCreators';
 
 import GnomeList from './GnomeList';
-
 import FilterBar from '../components/FilterBar';
 import initialState from '../reducers/initialState';
 
+import './../static/styles.scss';
 
 class Wrapper extends Component {
   status={
@@ -32,18 +32,16 @@ class Wrapper extends Component {
   render() {
     const {loading}=this.props;
     return (
-      <div>
-        {loading && (
-          <img src='assets/layout/images/loading.gif' alt="Progess....wait a minute" height="100" width="100"/>
-        )}
+      <div>        
         <div id="MainWrapperPopulation">
           <div className="FilterBar">
             <FilterBar/>
           </div>
           <div className="GnomeList">
-            <GnomeList/>        
+            {loading && (<div className="progress-bar">Processing.... wait an instant</div>)} 
+           <GnomeList/>        
           </div>
-        </div>  
+        </div>            
       </div>
       
     );

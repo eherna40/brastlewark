@@ -47,5 +47,6 @@ $topbarSearchInputColor:#ffffff;
 /* Footer */
 $footerBgColor:#ffffff;
 
-@import "./sass/_layout";
+@import "./_layout";
+@import "./globalStyles.scss";
 

@@ -3,11 +3,11 @@ import {connect} from 'react-redux';
 import Nouislider from 'react-nouislider';
 import wNumb from 'wnumb';
 
-import './../../static/nouislider.css';
+import './../../static/styles/nouislider.css';
 import * as at from '../../actions/actionCreators';
 import * as types from './../../actions/actionTypes';
 
-class FilterAge extends Component {
+export class FilterAge extends Component {
     onChange(value){
         let self=this;
         this.props.setAgeSelected(value);

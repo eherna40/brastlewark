@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
-import '../../static/styles.scss';
+import '../../static/styles/sass/layout.scss';
 
 class FiltersSelected extends Component {
     render() {

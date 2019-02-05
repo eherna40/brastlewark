@@ -2,11 +2,10 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 
-function History(props) {
- 
+const History = () => {
   return (
     <div >
-      <Paper style={{width:'95%', marginLeft:'1%', padding:'4px'}}>
+      <Paper className="paperHistory">
       <a href="/" className="button-volver">Volver</a>
         <Grid>
          <div className="lockup">
@@ -15,14 +14,15 @@ function History(props) {
          <p>Brastlewark is an almost exclusively gnomish city in eastern Cheliax, located on the western edge of the Aspodell Mountains, at the head of the Brastle River. It is believed to be the largest gnome settlement in the Inner Sea region, perhaps even in the entire world.</p>
         </Grid>
         <Grid>
-            <div style={{width:'90%', marginTop:'5px'}}>
-            <p style={{width:'100%', padding:'25px'}}>
-            <span style={{fontWeight:'bold', marginLeft:'30px'}}>Nation:</span> Cheliax
-            <span style={{fontWeight:'bold', marginLeft:'30px'}}>Region:</span> Archduchy of Sirmium
-            <span style={{fontWeight:'bold', marginLeft:'30px'}}>Size:</span> Large town
-            <span style={{fontWeight:'bold', marginLeft:'30px'}}>Population:</span> 1,335 
-            <span style={{fontWeight:'bold', marginLeft:'30px'}}>Government:</span> Overlord
-            <span style={{fontWeight:'bold', marginLeft:'30px'}}>Alignment:</span>	Chaotic neutral</p>   
+            <div className="detailTown">
+              <p>
+                <span>Nation:</span> Cheliax
+                <span>Region:</span> Archduchy of Sirmium
+                <span>Size:</span> Large town
+                <span>Population:</span> 1,335 
+                <span>Government:</span> Overlord
+                <span>Alignment:</span>	Chaotic neutral
+              </p>   
             </div>
         </Grid>
        
@@ -41,6 +41,5 @@ function History(props) {
     </div>
   );
 }
-
 
 export default History;

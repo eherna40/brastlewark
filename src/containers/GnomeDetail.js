@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './../static/styles.scss';
+import './../static/styles/sass/layout.scss';
 
 import * as at from '../actions/actionCreators';
 
-class GnomeDetail extends Component{
+export class GnomeDetail extends Component{
+  
   handleClickOpen = (id) => {
     this.setState({idShowDetail: id});
     this.props.showDetailGnome(id);
@@ -19,6 +20,7 @@ class GnomeDetail extends Component{
       const { item, idShowDetail} = this.props;
       return (
         <div>
+          
            {item.id === idShowDetail && (<div className='modal-wrapper' id="popup">
                 <div className="popup-contenedor">
                     <h2>{item.name}</h2>

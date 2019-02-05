@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
-import './../../static/nouislider.css';
+import './../../static/styles/nouislider.css';
 import * as at from '../../actions/actionCreators';
 import * as types from '../../actions/actionTypes';
 
-class FilterName extends Component {
+export class FilterName extends Component {
   
 
     onChange(event){

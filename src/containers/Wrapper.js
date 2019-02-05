@@ -8,7 +8,7 @@ import GnomeList from './GnomeList';
 import FilterBar from '../components/FilterBar';
 import initialState from '../reducers/initialState';
 
-import './../static/styles.scss';
+import './../static/styles/sass/layout.scss';
 
 class Wrapper extends Component {
   status={

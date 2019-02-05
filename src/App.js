@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Wrapper from './containers/Wrapper';
 import History from './components/History';
 
-import './static/layout.scss';
+import './static/styles/sass/layout.scss';
 
 const OPEN_HISTORY= 'OPEN_HISTORY';
 const OPEN_HABITANTS='OPEN_HABITANTS';

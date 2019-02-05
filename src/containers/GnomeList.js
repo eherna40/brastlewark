@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import Grid from '@material-ui/core/Grid';
-import './../static/styles.scss';
+import './../static/styles/sass/layout.scss';
 
 import GnomeDetail from './GnomeDetail';
 
-class GnomeList extends Component {
+export class GnomeList extends Component {
     
     render(){
         return (

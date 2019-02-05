@@ -77,7 +77,7 @@ $p_font_family: "Roboto","Helvetica","Arial",sans-serif;
 
 
 body{
-    background: url('./background-image.jpg') fixed no-repeat 0 0;
+    background: url('./../../images/background-image.jpg') fixed no-repeat 0 0;
     background-size: 100%
 }
 
@@ -334,3 +334,30 @@ input {
         }
  }
 
+ .paperHistory{
+    width:95%;
+    margin-left:1%;
+    padding:5px;
+        .lockup{
+            h2{
+                font-size: 30px;
+                margin-top: 1px;
+                padding-top: 15px;
+            }        
+        }
+ }
+ .detailTown{
+    width: 90%; 
+    margin-top: 5px;
+    margin-left: 2%;
+    background-color: lightblue;
+    border-radius: 4px;
+        p{
+            width:100%;
+            padding:25px;
+        }
+            span{
+                font-weight:bold;
+                margin-left:30px;
+            }
+ }

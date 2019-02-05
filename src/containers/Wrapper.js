@@ -33,6 +33,7 @@ class Wrapper extends Component {
     const {loading}=this.props;
     return (
       <div>        
+       <a href="/" className="button-volver">Volver</a>
         <div id="main-wrapper-population">
           <div className="filter-bar">
             <FilterBar/>

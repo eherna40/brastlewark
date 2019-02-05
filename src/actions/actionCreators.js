@@ -1,4 +1,3 @@
-//import axios from 'axios';
 import * as types from './actionTypes';
 import initialState from './../reducers/initialState';
 import {cloneDeep} from 'lodash';

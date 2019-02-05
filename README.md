@@ -7,7 +7,7 @@
     From inside the repo, open your terminal and type npm install 
     Type npm start to initialize a local server and open your browser and type localhost:3000
     
-###Technologies used
+### Technologies used
 
     * React 
     * Redux 

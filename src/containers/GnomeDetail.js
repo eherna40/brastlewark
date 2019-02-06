@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './../static/styles/sass/layout.scss';
+import './../assets/styles/sass/layout.scss';
 
 import * as at from '../actions/actionCreators';
 

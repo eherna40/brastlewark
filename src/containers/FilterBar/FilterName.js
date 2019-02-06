@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
-import './../../static/styles/nouislider.css';
+import './../../assets/styles/nouislider.css';
 import * as at from '../../actions/actionCreators';
 import * as types from '../../actions/actionTypes';
 

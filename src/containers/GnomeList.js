@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import Grid from '@material-ui/core/Grid';
-import './../static/styles/sass/layout.scss';
+import './../assets/styles/sass/layout.scss';
 
 import GnomeDetail from './GnomeDetail';
 

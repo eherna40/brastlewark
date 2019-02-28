@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import Nouislider from "react-nouislider";
 import wNumb from "wnumb";
 
-import "./../../static/styles/nouislider.css";
+import "./../../assets/styles/nouislider.css";
 import * as at from "../../actions/actionCreators";
 import * as types from "../../actions/actionTypes";
 

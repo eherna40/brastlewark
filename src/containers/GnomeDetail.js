@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import * as at from "../actions/actionCreators";
+import "./../assets/styles/sass/layout.scss";
 
-import "./../static/styles/sass/layout.scss";
+import * as at from "../actions/actionCreators";
 
 export class GnomeDetail extends Component {
   handleClickOpen = id => {
@@ -82,13 +81,6 @@ export class GnomeDetail extends Component {
   }
 }
 
-GnomeDetail.propTypes = {
-  population: PropTypes.array,
-  loading: PropTypes.bool,
-  age: PropTypes.number,
-  idShowDetail: PropTypes.number
-};
-
 const mapStateToProps = state => {
   return {
     population: state.inhabitants.population.filter(item => item.display),
@@ -106,7 +98,6 @@ const mapDispatchToProps = dispatch => ({
     dispatch(at.showHideDetail(null));
   }
 });
-
 export default connect(
   mapStateToProps,
   mapDispatchToProps

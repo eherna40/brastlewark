@@ -6,8 +6,8 @@ const History = () => {
   return (
     <div>
       <Paper className="paperHistory">
-        <a href="/" className="button-volver" title="Back">
-          &lt;
+        <a href="/" className="button-volver">
+          Volver
         </a>
         <Grid>
           <div className="lockup">

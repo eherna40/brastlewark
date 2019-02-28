@@ -8,7 +8,7 @@ import GnomeList from "./GnomeList";
 import FilterBar from "../components/FilterBar";
 import initialState from "../reducers/initialState";
 
-import "./../static/styles/sass/layout.scss";
+import "./../assets/styles/sass/layout.scss";
 
 class Wrapper extends Component {
   status = {
@@ -34,8 +34,8 @@ class Wrapper extends Component {
     const { loading } = this.props;
     return (
       <div>
-        <a href="/" className="button-volver" title="Back">
-          &lt;
+        <a href="/" className="button-volver">
+          Volver
         </a>
         <div id="main-wrapper-population">
           <div className="filter-bar">

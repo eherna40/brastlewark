@@ -6,7 +6,7 @@ import FiltersSelected from "../containers/FilterBar/FiltersSelected";
 import FilterProfession from "../containers/FilterBar/FilterProfession";
 import FilterName from "../containers/FilterBar/FilterName";
 
-import "../static/styles/sass/layout.scss";
+import "../assets/styles/sass/layout.scss";
 
 const FilterBar = () => {
   return (

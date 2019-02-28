@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
+import PropTypes from "prop-types";
 import "../../assets/styles/sass/layout.scss";
 
 class FiltersSelected extends Component {
@@ -48,6 +48,14 @@ class FiltersSelected extends Component {
     );
   }
 }
+
+FiltersSelected.PropTypes = {
+  age: PropTypes.number,
+  height: PropTypes.number,
+  gnomeSelected: PropTypes.object,
+  professionSelected: PropTypes.object,
+  population: PropTypes.array
+};
 
 const mapStateToProps = state => {
   return {

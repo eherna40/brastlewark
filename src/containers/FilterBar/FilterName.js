@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
+import PropTypes from "prop-types";
 import "./../../assets/styles/nouislider.css";
 import * as at from "../../actions/actionCreators";
 import * as types from "../../actions/actionTypes";
@@ -30,7 +30,9 @@ export class FilterName extends Component {
     );
   }
 }
-
+FilterName.PropTypes = {
+  loading: PropTypes.bool
+};
 const mapStateToProps = state => {
   return {
     loading: state.filters.loading

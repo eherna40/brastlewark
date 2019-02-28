@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Nouislider from "react-nouislider";
+import PropTypes from "prop-types";
 import wNumb from "wnumb";
 
 import "./../../assets/styles/nouislider.css";
@@ -38,6 +39,11 @@ export class FilterAge extends Component {
     );
   }
 }
+
+FilterAge.PropTypes = {
+  age: PropTypes.number,
+  loading: PropTypes.bool
+};
 
 const mapStateToProps = state => {
   return {

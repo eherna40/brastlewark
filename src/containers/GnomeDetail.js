@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import "./../assets/styles/sass/layout.scss";
-
 import * as at from "../actions/actionCreators";
 
 export class GnomeDetail extends Component {
@@ -54,8 +54,7 @@ export class GnomeDetail extends Component {
               </div>
               <button
                 className="popup-cerrar"
-                onClick={() => this.handleClickClose(item.id)}
-              >
+                onClick={() => this.handleClickClose(item.id)}>
                 X
               </button>
             </div>
@@ -71,8 +70,7 @@ export class GnomeDetail extends Component {
           <a
             href="#popup"
             className="popup-link"
-            onClick={() => this.handleClickOpen(item.id)}
-          >
+            onClick={() => this.handleClickOpen(item.id)}>
             More info
           </a>
         </div>
@@ -80,6 +78,13 @@ export class GnomeDetail extends Component {
     );
   }
 }
+
+GnomeDetail.PropTypes = {
+  population: PropTypes.array,
+  age: PropTypes.number,
+  loading: PropTypes.boolean,
+  idShowDetail: PropTypes.number
+};
 
 const mapStateToProps = state => {
   return {

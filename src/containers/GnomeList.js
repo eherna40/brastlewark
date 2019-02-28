@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import Grid from "@material-ui/core/Grid";
 import "./../assets/styles/sass/layout.scss";
 
@@ -21,6 +22,11 @@ export class GnomeList extends Component {
     );
   }
 }
+GnomeDetail.PropTypes = {
+  population: PropTypes.array,
+  age: PropTypes.age,
+  loading: PropTypes.bool
+};
 
 const mapStateToProps = state => {
   return {

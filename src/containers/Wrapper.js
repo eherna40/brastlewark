@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { store } from "./../store";
 import { connect } from "react-redux";
-
+import PropTypes from "prop-types";
 import { getInhabitants } from "./../actions/actionCreators";
 
 import GnomeList from "./GnomeList";
@@ -34,8 +34,8 @@ class Wrapper extends Component {
     const { loading } = this.props;
     return (
       <div>
-        <a href="/" className="button-volver">
-          Volver
+        <a href="/" className="back-button">
+          &lt;
         </a>
         <div id="main-wrapper-population">
           <div className="filter-bar">
@@ -52,6 +52,12 @@ class Wrapper extends Component {
     );
   }
 }
+
+Wrapper.PropTypes = {
+  population: PropTypes.array,
+  age: PropTypes.age,
+  loading: PropTypes.bool
+};
 
 const mapStateToProps = state => {
   return {

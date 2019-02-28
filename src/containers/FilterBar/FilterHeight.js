@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Nouislider from "react-nouislider";
 import wNumb from "wnumb";
-
+import PropTypes from "prop-types";
 import "./../../assets/styles/nouislider.css";
 import * as at from "../../actions/actionCreators";
 import * as types from "../../actions/actionTypes";
@@ -38,6 +38,11 @@ class FilterHeight extends Component {
     );
   }
 }
+
+FilterHeight.PropTypes = {
+  height: PropTypes.number,
+  loading: PropTypes.bool
+};
 
 const mapStateToProps = state => {
   return {

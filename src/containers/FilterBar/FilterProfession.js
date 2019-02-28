@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
+import PropTypes from "prop-types";
 import "./../../assets/styles/nouislider.css";
 import * as at from "../../actions/actionCreators";
 import * as types from "../../actions/actionTypes";
@@ -23,8 +23,7 @@ class FilterProfession extends Component {
         <br />
         <select
           placeholder="Select a profession"
-          onChange={this.onChange.bind(this)}
-        >
+          onChange={this.onChange.bind(this)}>
           {professions.options.map(item => {
             if (flagFirts) {
               flagFirts = false;
@@ -45,6 +44,11 @@ class FilterProfession extends Component {
     );
   }
 }
+
+FilterProfession.PropTypes = {
+  professions: PropTypes.array,
+  loading: PropTypes.bool
+};
 
 const mapStateToProps = state => {
   return {

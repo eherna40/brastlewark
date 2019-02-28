@@ -2,11 +2,24 @@
   "name": "brastlewark",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "devDependencies": {
     "@material-ui/core": "^3.9.1",
     "@material-ui/icons": "^3.0.2",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.9.0",
+    "jasmine-enzyme": "^7.0.1",
     "lodash": "^4.17.11",
     "node-sass": "^4.11.0",
+    "prop-types": "^15.7.2",
     "react": "^16.7.0",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.7.0",
@@ -20,21 +33,6 @@
     "redux-thunk": "^2.3.0",
     "typeface-roboto": "0.0.54",
     "wnumb": "^1.1.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "devDependencies": {
-    "enzyme": "^3.8.0",
-    "enzyme-adapter-react-16": "^1.9.0",
-    "jasmine-enzyme": "^7.0.1",
-    "redux-mock-store": "^1.5.3"
   },
   "browserslist": [
     ">0.2%",

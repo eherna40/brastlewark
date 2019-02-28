@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import "./../static/styles/sass/layout.scss";
 import * as at from "../actions/actionCreators";
+
+import "./../static/styles/sass/layout.scss";
 
 export class GnomeDetail extends Component {
   handleClickOpen = id => {
@@ -82,8 +83,8 @@ export class GnomeDetail extends Component {
 }
 
 GnomeDetail.propTypes = {
-  population: PropTypes.array.isRequired,
-  loading: PropTypes.bool.isRequired,
+  population: PropTypes.array,
+  loading: PropTypes.bool,
   age: PropTypes.number,
   idShowDetail: PropTypes.number
 };

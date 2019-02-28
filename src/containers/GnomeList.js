@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Grid from "@material-ui/core/Grid";
-import "./../static/styles/sass/layout.scss";
 import PropTypes from "prop-types";
 import GnomeDetail from "./GnomeDetail";
+
+import "./../static/styles/sass/layout.scss";
 
 export class GnomeList extends Component {
   render() {
@@ -23,8 +24,8 @@ export class GnomeList extends Component {
 }
 
 GnomeList.propTypes = {
-  population: PropTypes.array.isRequired,
-  loading: PropTypes.bool.isRequired
+  population: PropTypes.array,
+  loading: PropTypes.bool
 };
 
 const mapStateToProps = state => {
